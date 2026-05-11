@@ -5,6 +5,7 @@ export function showDialogs(){
    dialog.classList.add('flex')
 }
 export function closeDialogs(){
+     let numberPass = document.querySelector("#numberPass")
     let showStuff = document.querySelector('#showStuff')
     let valueStuff = document.querySelector("#valueStuff")
     let select = document.querySelector("#select")
@@ -17,6 +18,7 @@ export function closeDialogs(){
     select.value = 'Categoria'
     showPass.innerHTML = ""
     valuePass.value = ""
+    numberPass.textContent = 1
     name.value = ""
 
     dialog.classList.add('hidden')
