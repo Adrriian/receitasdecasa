@@ -21,7 +21,7 @@
                     <h1 class="text-2xl text-[#b15d3b] font-bold">Receitas de Casa</h1>
                 </div>
                 <input type="text" placeholder="Busque a Receita"
-                    class="rounded-xl p-2  bg-white w-full shadow-md/20 text-[#b15d3b] outline-0 md:w-md lg:w-2xl">
+                    class="rounded-xl p-2  bg-white w-full shadow-md/20 text-[#b15d3b] outline-0 md:w-md ">
             </div>
         </div>
     </section>
@@ -29,17 +29,21 @@
         <div class="max-w-5xl m-auto">
             <div class="flex flex-col gap-5 bg-[#b15d3b] p-5 rounded-xl ">
                 <div class="flex flex-col gap-3 items-center sm:flex-row-reverse sm:items-start sm:justify-between">
-                    <img src="/public/img/img/casal.png" class="w-full sm:w-52 rounded-xl lg:w-72"/>
+                    <img src="/public/img/img/casal.png" class="w-full sm:w-52 rounded-xl lg:w-72" />
                     <div class="flex flex-col gap-3 lg:gap-11 p-2">
-                        <h1 class="text-white font-bold text-xl  text-justify sm:w-xs sm:text-xl md:w-md lg:text-3xl">Feito com muito amor e carinho para a melhor Esposa que já
-                        existiu na minha vida ❤️face da Terra ❤️
+                        <h1 class="text-white font-bold text-xl  text-justify sm:w-xs sm:text-xl md:w-md lg:text-3xl">
+                            Feito com muito amor e carinho para a melhor Esposa que já
+                            existiu na minha vida ❤️face da Terra ❤️
                         </h1>
-                        <div class="p-2 bg-cyan-600 shadow-md/20 rounded-xl flex items-center justify-center cursor-pointer hover:bg-cyan-500 w-40">
-                            <h1 class="text-white font-medium">Ver Receitas</h1>
-                        </div>       
+                        <a href="#show">
+                            <div
+                                class="p-2 bg-cyan-600 shadow-md/20 rounded-xl flex items-center justify-center cursor-pointer hover:bg-cyan-500 w-40 transition-all ease-linear duration-150">
+                                <h1 class="text-white font-medium">Ver Receitas</h1>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                              
+
             </div>
         </div>
     </section>
@@ -73,13 +77,32 @@
                         <img src="./public/img/icons/favorito.png" class="max-w-5" />
                         <h1>Favoritas</h1>
                     </div>
+
                 </div>
                 <div id="show" class="bg-white rounded-2xl p-2">
                     <h1>ola</h1>
                 </div>
+                <div id="addReceitas"
+                    class="p-2 bg-cyan-600 shadow-md/20 rounded-xl flex items-center justify-center cursor-pointer hover:bg-cyan-500 w-40 transition-all ease-linear duration-150">
+                    <h1 class="text-white font-medium">Adicionar Receitas</h1>
+                </div>
             </div>
         </div>
     </section>
+    <dialog id="dialog"
+        class="bg-black/70 z-999 fixed w-full h-full inset-0 hidden items-center justify-center">
+        <div class="w-4/5 h-4/5 rounded-xl bg-[#f7f3ee] p-5">
+            <div class="w-full flex justify-between items-center">
+                <h1 class="text-sm font-bold text-[#b15d3b] md:text-xl">Nova Receita</h1>
+                <div id="close" class="group hover:bg-[#b15d3b] cursor-pointer w-fit p-2 rounded-full transition-all ease-linear duration-150">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"stroke="currentColor" class="size-6 group-hover:stroke-white stroke-[#b15d3b]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                </div>
+            </div>   
+        </div>
+    </dialog>
     <script type="module" src="./src/js/script.js"></script>
 </body>
 
