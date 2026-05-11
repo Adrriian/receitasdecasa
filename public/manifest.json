@@ -4,8 +4,8 @@
   "description": "Web app de receitas",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ED2100",
-  "theme_color": "#0000FF",
+  "background_color": "#8D6E63",
+  "theme_color": "#f7f3ee",
   "orientation": "portrait-primary",
   "lang": "pt-BR",
   "icons": [
