@@ -17,7 +17,7 @@ export function plussPass(){
     const passH1 = document.createElement('h1')
     const descriptionPass = document.createElement('p')
 
-    divMae.classList.add('flex','flex-col','justify-between','gap-3','border-2', 'border-[#b15d3b]','p-1','rounded', 'bg-white', )
+    divMae.classList.add('flex','flex-col','justify-between','gap-2','border-2', 'border-[#b15d3b]','p-1','rounded', 'bg-white', )
     divSon.classList.add('flex','items-center' ,'justify-between', 'gap-1',)
     divSvg.classList.add('cursor-pointer')
     passH1.classList.add( 'text-[#b15d3b]','font-bold',)
