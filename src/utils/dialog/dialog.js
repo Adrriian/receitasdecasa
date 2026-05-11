@@ -18,7 +18,7 @@ export function closeDialogs(){
     select.value = 'Categoria'
     showPass.innerHTML = ""
     valuePass.value = ""
-    numberPass.textContent = 1
+ 
     name.value = ""
 
     dialog.classList.add('hidden')
