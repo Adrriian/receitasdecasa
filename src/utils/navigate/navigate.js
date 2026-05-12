@@ -1,4 +1,4 @@
-import { getData } from "../../zone/massas/showData.js"
+import { getData } from "../../zone/showReceitas/showData.js"
 
 let sobremessas = document.querySelector("#sobremessas")
 let massas = document.querySelector("#massas")
@@ -6,7 +6,7 @@ let cafe = document.querySelector("#cafe")
 let lanches = document.querySelector("#lanches")
 let fitness = document.querySelector("#fitness")
 let favorito = document.querySelector("#favorito")
-
+let search = document.querySelector("#search")
 export function showNavigate(){
     const id = "Massas"
     massas.classList.remove('bg-white')
@@ -30,6 +30,7 @@ export function showMassas(){
     fitness.classList.add('bg-white')
     favorito.classList.add('bg-white')
     sobremessas.classList.remove('bg-[#b15d3b]', 'text-white', )
+    search.value = ""
     getData(id)
 }
 export function showSobremessas(){
@@ -47,6 +48,7 @@ export function showSobremessas(){
     fitness.classList.add('bg-white')
     favorito.classList.add('bg-white')
     sobremessas.classList.add('bg-[#b15d3b]', 'text-white', )
+    search.value = ""
       getData(id)
 }
 export function showCafe(){
@@ -64,6 +66,7 @@ export function showCafe(){
     fitness.classList.add('bg-white')
     favorito.classList.add('bg-white')
     sobremessas.classList.remove('bg-[#b15d3b]', 'text-white', )
+    search.value = ""
       getData(id)
 }
 export function showLanches(){
@@ -81,6 +84,7 @@ export function showLanches(){
     fitness.classList.add('bg-white')
     favorito.classList.add('bg-white')
     sobremessas.classList.remove('bg-[#b15d3b]', 'text-white', )
+    search.value = ""
       getData(id)
 }
 export function showFitness(){
@@ -98,6 +102,7 @@ export function showFitness(){
     fitness.classList.remove('bg-white')
     favorito.classList.add('bg-white')
     sobremessas.classList.remove('bg-[#b15d3b]', 'text-white', )
+    search.value = ""
       getData(id)
 }
 export function showFavoritos(){
@@ -115,5 +120,6 @@ export function showFavoritos(){
     fitness.classList.add('bg-white')
     favorito.classList.remove('bg-white')
     sobremessas.classList.remove('bg-[#b15d3b]', 'text-white', )
+    search.value = ""
       getData(id)
 }
