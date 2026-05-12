@@ -1,5 +1,6 @@
 import { closeDialogs, showDialogs } from "../utils/dialog/dialog.js";
 import { showCafe, showFavoritos, showFitness, showLanches, showMassas, showNavigate, showSobremessas } from "../utils/navigate/navigate.js";
+import { searchs } from "../zone/buscaInput/buscaInput.js";
 import { plussStufs, plussStufsArray } from "../zone/ingredientes/plusIngredientes.js";
 import { showPass, plussPass } from "../zone/ingredientes/plusPass.js";
 import { saveData } from "../zone/ingredientes/save.js";
@@ -32,6 +33,12 @@ cafe.addEventListener('click', showCafe)
 lanches.addEventListener('click', showLanches)
 fitness.addEventListener('click', showFitness)
 favorito.addEventListener('click', showFavoritos)
+
+let search = document.querySelector("#search")
+search.addEventListener('input', ()=>{
+    searchs(search.value)
+   
+})
 
 showNavigate()
 showPass()

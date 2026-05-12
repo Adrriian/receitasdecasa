@@ -1,4 +1,4 @@
-import { getData } from "../../zone/massas/showDataMassas.js"
+import { getData } from "../../zone/massas/showData.js"
 
 let sobremessas = document.querySelector("#sobremessas")
 let massas = document.querySelector("#massas")
