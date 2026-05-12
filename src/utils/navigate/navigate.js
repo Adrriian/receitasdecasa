@@ -1,4 +1,4 @@
-import { getDataMassas } from "../../zone/massas/showDataMassas.js"
+import { getData } from "../../zone/massas/showDataMassas.js"
 
 let sobremessas = document.querySelector("#sobremessas")
 let massas = document.querySelector("#massas")
@@ -11,7 +11,7 @@ export function showNavigate(){
     const id = "Massas"
     massas.classList.remove('bg-white')
     massas.classList.add('bg-[#b15d3b]', 'text-white', )
-    getDataMassas(id)
+    getData(id)
 }
 
 
@@ -24,7 +24,7 @@ export function showMassas(){
     favorito.classList.remove('bg-[#b15d3b]', 'text-white', )
     massas.classList.remove('bg-white')
     massas.classList.add('bg-[#b15d3b]', 'text-white', )
-    getDataMassas(id)
+    getData(id)
 }
 export function showSobremessas(){
     const id = "Sobremessas"
@@ -35,7 +35,7 @@ export function showSobremessas(){
     favorito.classList.remove('bg-[#b15d3b]', 'text-white', )
     sobremessas.classList.remove('bg-white')
     sobremessas.classList.add('bg-[#b15d3b]', 'text-white', )
-      getDataMassas(id)
+      getData(id)
 }
 export function showCafe(){
     const id = "Café"
@@ -46,7 +46,7 @@ export function showCafe(){
     favorito.classList.remove('bg-[#b15d3b]', 'text-white', )
     cafe.classList.remove('bg-white')
     cafe.classList.add('bg-[#b15d3b]', 'text-white', )
-      getDataMassas(id)
+      getData(id)
 }
 export function showLanches(){
      const id = "Lanches"
@@ -57,7 +57,7 @@ export function showLanches(){
     favorito.classList.remove('bg-[#b15d3b]', 'text-white', )
     lanches.classList.remove('bg-white')
     lanches.classList.add('bg-[#b15d3b]', 'text-white', )
-      getDataMassas(id)
+      getData(id)
 }
 export function showFitness(){
      const id = "Fitness"
@@ -68,7 +68,7 @@ export function showFitness(){
     favorito.classList.remove('bg-[#b15d3b]', 'text-white', )
     fitness.classList.remove('bg-white')
     fitness.classList.add('bg-[#b15d3b]', 'text-white', )
-      getDataMassas(id)
+      getData(id)
 }
 export function showFavoritos(){
      const id = true
@@ -79,5 +79,5 @@ export function showFavoritos(){
     cafe.classList.remove('bg-[#b15d3b]', 'text-white', )
     favorito.classList.remove('bg-white')
     favorito.classList.add('bg-[#b15d3b]', 'text-white', )
-      getDataMassas(id)
+      getData(id)
 }
