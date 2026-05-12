@@ -1,5 +1,5 @@
 
-let dataPass = [
+export let dataPass = [
 
 ]
 export function showPass() {
@@ -33,7 +33,7 @@ export async function plussPass() {
     showData()
 
 }
-async function showData() {
+export async function showData() {
     let showPass = document.querySelector('#showPass')
     showPass.innerHTML = ""
 
@@ -82,7 +82,7 @@ async function showData() {
             })
         })
         showPass.appendChild(divMae)
-        console.log(dataPass)
+       
 
     }
 
@@ -98,8 +98,12 @@ function deletePass(id) {
             numberPass: index + 1
         }));
 
-
-    numberPassText.textContent = Number(dataPass[dataPass.length - 1].numberPass) + 1;
+    if(dataPass.length <= 0){
+        numberPassText.textContent = "1";
+    }else{
+        numberPassText.textContent = Number(dataPass[dataPass.length - 1].numberPass) + 1;
+    }
+    
     showPass.innerHTML = ""
     showData()
 }

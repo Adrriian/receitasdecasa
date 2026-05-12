@@ -54,32 +54,32 @@
                 <div class="flex flex-col gap-5">
                     <h1 class="font-bold text-xl">Categorias</h1>
                     <div class="w-full flex gap-3 pb-2  overflow-x-scroll sm:gap-5 md:overflow-hidden">
-                        <div
+                        <div id="massas"
                             class="flex  items-center gap-1 px-5 py-2 bg-white rounded-xl cursor-pointer hover:bg-[#b15d3b] hover:text-white transition-all ease-linear duration-150">
                             <img src="./public/img/icons/macarrao.png" class="max-w-5" />
                             <h1>Massas</h1>
                         </div>
-                        <div
+                        <div id="sobremessas"
                             class="flex  items-center gap-1 px-5 py-2 bg-white rounded-xl cursor-pointer hover:bg-[#b15d3b] hover:text-white transition-all ease-linear duration-150">
                             <img src="./public/img/icons/sobremessa.png" class="max-w-5" />
-                            <h1>Sobremesas</h1>
+                            <h1>Sobremessas</h1>
                         </div>
-                        <div
+                        <div id="cafe"
                             class="flex  items-center gap-1 px-5 py-2 bg-white rounded-xl cursor-pointer hover:bg-[#b15d3b] hover:text-white transition-all ease-linear duration-150">
                             <img src="./public/img/icons/cafe.png" class="max-w-5" />
                             <h1>Café</h1>
                         </div>
-                        <div
+                        <div id="lanches"
                             class="flex  items-center gap-1 px-5 py-2 bg-white rounded-xl cursor-pointer hover:bg-[#b15d3b] hover:text-white transition-all ease-linear duration-150">
                             <img src="./public/img/icons/lanche.png" class="max-w-5" />
                             <h1>Lanches</h1>
                         </div>
-                        <div
+                        <div id="fitness"
                             class="flex  items-center gap-1 px-5 py-2 bg-white rounded-xl cursor-pointer hover:bg-[#b15d3b] hover:text-white transition-all ease-linear duration-150">
                             <img src="./public/img/icons/fitness.png" class="max-w-5" />
                             <h1>Fitness</h1>
                         </div>
-                        <div
+                        <div id="favorito"
                             class="flex  items-center gap-1 px-5 py-2 bg-white rounded-xl cursor-pointer hover:bg-[#b15d3b] hover:text-white transition-all ease-linear duration-150">
                             <img src="./public/img/icons/favorito.png" class="max-w-5" />
                             <h1>Favoritas</h1>
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </section>
-        <dialog id="dialog" class="bg-black z-999 fixed w-full h-full inset-0 flex items-center justify-center ">
+        <dialog id="dialog" class="bg-black/70 z-999 fixed w-full h-full inset-0 hidden items-center justify-center ">
             <div class="w-4/5 h-4/5 rounded-xl bg-[#f7f3ee] overflow-y-scroll">
                 <div class="w-full flex justify-between items-center p-5">
                     <h1 class="text-sm font-bold text-[#b15d3b] md:text-xl">Nova Receita</h1>
@@ -118,13 +118,13 @@
                     </div>
                     <div class="flex flex-col gap-2 ">
                         <h1 class="text-[#b15d3b] font-bold">Link do Video</h1>
-                        <input id="name" type="text" placeholder="Cole o Link do video"
+                        <input id="link" type="text" placeholder="Cole o Link do video"
                             class="p-2 text-[#b15d3b] bg-white outline-0 rounded-md shadow-md/20 hover:bg-gray-500/20" />
                     </div>
                     <div class="flex flex-col gap-2 ">
                         <h1 class="text-[#b15d3b] font-bold">Escolha a Imagem da Receita</h1>
 
-                        <input id="name" type="file"
+                        <input  id="img" type="file"
                             class="placeholder:text-body p-2 text-[#b15d3b] bg-white outline-0 rounded-md shadow-md/20 hover:bg-gray-500/20" />
                     </div>
                     <div class="flex flex-col gap-2">
