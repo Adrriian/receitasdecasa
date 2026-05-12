@@ -1,4 +1,4 @@
-import { closeDialogs, showDialogs } from "../utils/dialog/dialog.js";
+ import { closeDialogs, showDialogs } from "../utils/dialog/dialog.js";
 import { showCafe, showFavoritos, showFitness, showLanches, showMassas, showNavigate, showSobremessas } from "../utils/navigate/navigate.js";
 import { searchs } from "../zone/buscaInput/buscaInput.js";
 import { plussStufs, plussStufsArray } from "../zone/ingredientes/plusIngredientes.js";
@@ -36,7 +36,7 @@ favorito.addEventListener('click', showFavoritos)
 
 let search = document.querySelector("#search")
 search.addEventListener('input', ()=>{
-    searchs(search.value).toLowerCase()
+    searchs(search.value.toLowerCase())
    
 })
 
