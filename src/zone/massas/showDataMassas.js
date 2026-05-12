@@ -25,12 +25,13 @@ export async function getData(id) {
 
         //classes 
         divMae.classList.add("flex", 'flex-col', 'gap-3', )
-        divSon.classList.add("flex", 'flex-col', 'gap-3', 'bg-[#f7f3ee]', 'rounded-xl')
+        divSon.classList.add("flex", 'flex-col', 'gap-3', 'bg-[#f7f3ee]', 'rounded-xl', )
         divTitle.classList.add("flex",'items-center', 'justify-between', 'gap-3','p-2')
         divComida.classList.add('w-full','h-50')
         imgComida.classList.add('rounded-tr-xl','rounded-tl-xl', 'w-full','h-full','object-cover','object-center')
         h1Description.classList.add('p-2','text-[#b15d3b]','font-bold')
         h1Name.classList.add('text-[#b15d3b]','font-bold')
+        divImgTitle.classList.add('cursor-pointer')
         //dados
         imgComida.src= receitas[i].imgs
         h1Name.textContent = receitas[i].name
