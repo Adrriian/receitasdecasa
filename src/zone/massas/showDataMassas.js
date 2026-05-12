@@ -24,9 +24,10 @@ export async function getData(id) {
 
         //classes 
         divMae.classList.add("flex", 'flex-col', 'gap-3')
-        divSon.classList.add("flex", 'flex-col', 'gap-3')
-        divTitle.classList.add("flex",'items-center', 'justify-between', 'gap-3')
+        divSon.classList.add("flex", 'flex-col', 'gap-3', 'bg-[#b15d3b]')
+        divTitle.classList.add("flex",'items-center', 'justify-between', 'gap-3','P-2')
         imgComida.classList.add('rounded-tr-xl','rounded-tl-xl')
+        h1Description.classList.add('p-2')
         //dados
         imgComida.src= receitas[i].imgs
         h1Name.textContent = receitas[i].name
