@@ -36,7 +36,7 @@ favorito.addEventListener('click', showFavoritos)
 
 let search = document.querySelector("#search")
 search.addEventListener('input', ()=>{
-    searchs(search.value)
+    searchs(search.value).toLowerCase()
    
 })
 
