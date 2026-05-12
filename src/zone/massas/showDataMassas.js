@@ -26,7 +26,7 @@ export async function getData(id) {
         divMae.classList.add("flex", 'flex-col', 'gap-3')
         divSon.classList.add("flex", 'flex-col', 'gap-3')
         divTitle.classList.add("flex",'items-center', 'justify-between', 'gap-3')
-
+        imgComida.classList.add('h-30')
         //dados
         imgComida.src= receitas[i].imgs
         h1Name.textContent = receitas[i].name
