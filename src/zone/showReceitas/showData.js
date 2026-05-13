@@ -18,14 +18,14 @@ export async function getData(id) {
     if (receitas.length === 0) {
         const divMae = document.createElement("div")
         const h1Name = document.createElement("h1")
-        divMae.classList.add("flex", 'flex-col', 'gap-2', 'justify-center', 'items-center')
+        divMae.classList.add("flex", 'flex-col', 'gap-2', 'items-center', 'col-start-1', 'col-end-4')
         h1Name.classList.add('text-[#b15d3b]', 'font-bold','text-xl')
         show.innerHTML = ""
         h1Name.textContent = "Sem Receitas"
         divMae.appendChild(h1Name)
 
         show.appendChild(divMae)
-      
+        return
     }
 
     for (let i in receitas) {
