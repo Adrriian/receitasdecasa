@@ -52,6 +52,7 @@ export async function saveData() {
         const imageUrl = data.data.url
 
         const ref = await addDoc(collection(db, "receitas"), {
+            id:id,
             name: name.value.toLowerCase(),
             link: link.value,
             description: description.value,

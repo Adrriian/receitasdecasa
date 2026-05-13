@@ -3,7 +3,7 @@ import { db } from "../../utils/config/firebase.js"
 import { getData } from "../../zone/showReceitas/showData.js"
 
 export async function favorites(ids) {
-    let favorite = document.querySelector('.favorite')
+    
     const q = doc(db, "receitas", ids)
     const data = await getDoc(q)
     const dados = data.data()

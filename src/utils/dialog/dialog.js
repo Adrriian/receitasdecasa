@@ -3,12 +3,13 @@ import { dataPass } from "../../zone/ingredientes/plusPass.js"
 
 
 let dialog = document.querySelector('#dialog')
+let dialogReceita = document.querySelector("#dialogReceita")
 
 export function showDialogs() {
-
     dialog.classList.remove('hidden')
     dialog.classList.add('flex')
 }
+
 export function closeDialogs() {
     let numberPass = document.querySelector("#numberPass")
     let showStuff = document.querySelector('#showStuff')
@@ -34,5 +35,17 @@ export function closeDialogs() {
     }
     dialog.classList.add('hidden')
     dialog.classList.remove('flex')
+
+}
+
+export function showDialogReceitas() {
+    dialogReceita.classList.remove('hidden')
+    dialogReceita.classList.add('flex')
+}
+
+export function closeDialogReceitas() {
+    
+    dialogReceita.classList.add('hidden')
+    dialogReceita.classList.remove('flex')
 
 }

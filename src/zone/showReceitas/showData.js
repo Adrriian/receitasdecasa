@@ -1,6 +1,7 @@
 import { collection, query, where, getDocs, or } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js"
 import { db } from "../../utils/config/firebase.js"
-import { alterarItem, favorites } from "../../utils/favorite/favorite.js"
+import { favorites } from "../../utils/favorite/favorite.js"
+import { showModalReceita } from "./showModalReceitas.js"
 
 
 export async function getData(id) {
@@ -23,21 +24,27 @@ export async function getData(id) {
         const imgComida = document.createElement("img")
         const h1Name = document.createElement("h1")
         const divComida = document.createElement("div")
+        const divBtn = document.createElement("div")
+        const h1Btn = document.createElement("h1")
 
         //classes 
         divMae.classList.add("flex", 'flex-col', 'gap-3',)
-        divSon.classList.add("flex", 'flex-col', 'gap-3', 'bg-[#f7f3ee]', 'rounded-xl',)
+        divSon.classList.add("flex", 'flex-col', 'gap-3', 'bg-[#f7f3ee]', 'rounded-xl', )
         divTitle.classList.add("flex", 'items-center', 'justify-between', 'gap-3', 'p-2')
         divComida.classList.add('w-full', 'h-50')
         imgComida.classList.add('rounded-tr-xl', 'rounded-tl-xl', 'w-full', 'h-full', 'object-cover', 'object-center')
         h1Description.classList.add('p-2', 'text-[#b15d3b]', 'font-bold')
         h1Name.classList.add('text-[#b15d3b]', 'font-bold')
         divImgTitle.classList.add('favorite', 'cursor-pointer')
+        divBtn.classList.add('group',"flex", 'items-center', 'justify-center', 'm-2','p-2','bg-[#b15d3b]', 'rounded','hover:bg-[#de764c]', 'cursor-pointer','showModalReceitas')
+        h1Btn.classList.add('text-white', 'font-bold',)
 
-        divMae.setAttribute('id', receitas[i].id)
+        divBtn.setAttribute('ids', receitas[i].id)
         divImgTitle.setAttribute('id', receitas[i].id)
 
         //dados
+        h1Btn.textContent = "Ver Receita"
+       
         imgComida.src = receitas[i].imgs
         h1Name.textContent = receitas[i].name
         h1Description.textContent = receitas[i].description
@@ -61,16 +68,26 @@ export async function getData(id) {
         divTitle.appendChild(h1Name)
         divTitle.appendChild(divImgTitle)
         divComida.appendChild(imgComida)
+        divBtn.appendChild(h1Btn)
         divSon.appendChild(divComida)
         divSon.appendChild(divTitle)
         divSon.appendChild(h1Description)
+        divSon.appendChild(divBtn)
         divMae.appendChild(divSon)
 
         divTitle.querySelectorAll('.favorite').forEach(item => {
             item.addEventListener('click', () => {
                 let ids = item.getAttribute('id')
                 favorites(ids)
-                alterarItem(ids)
+                
+            })
+        })
+       
+        divSon.querySelectorAll('.showModalReceitas').forEach(item => {
+            item.addEventListener('click', () => {
+                let id = item.getAttribute('ids')
+                showModalReceita(id)
+               
             })
         })
 
