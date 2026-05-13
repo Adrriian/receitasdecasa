@@ -95,10 +95,13 @@ export async function showModalReceita(id) {
         for (let e in ingredientes) {
           
             const h1 = document.createElement("h1")
-            h1.classList.add('text-[#b15d3b]', 'font-bold', 'text-md')
+            const divIngredientess = document.createElement("div")
+            divIngredientess.classList.add('bg-[#f7f3ee]','p-2','rounded-xl')
+            h1.classList.add('text-[#b15d3b]', 'font-bold', 'text-md',)
 
             h1.textContent = ingredientes[e].description
-            divShowIngredientes.appendChild(h1)
+            divIngredientess.appendChild(h1)
+            divShowIngredientes.appendChild(divIngredientess)
             
         }
          for (let e in pass) {
