@@ -17,7 +17,7 @@ export async function favorites(ids) {
         await updateDoc(q, {
             favorito: false
         })
-        items.innerHTML = `olassssssssss`
+
     }
 
 }
