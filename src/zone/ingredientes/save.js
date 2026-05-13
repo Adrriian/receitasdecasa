@@ -1,22 +1,22 @@
 import { db } from "../../utils/config/firebase.js";
 import { dataIngredientes, plussStufs } from "./plusIngredientes.js";
 import { dataPass, showData, showPass } from "./plusPass.js";
-import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
+import { collection, addDoc, getDocs,setDoc, doc} from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
 
 export async function saveData() {
     let select = document.querySelector('#select')
     let name = document.querySelector('#name')
     let link = document.querySelector('#link')
     let img = document.querySelector('#img')
-     let description = document.querySelector('#description')
+    let description = document.querySelector('#description')
     const API_KEY = "2cc9bc81af8967580d318d107a44ad97"
 
     if (!name.value || !description.value || !img.value || select.value === "Categoria" || dataIngredientes.length <= 0 || dataPass.length <= 0) {
         alert('adicione os dados')
-    }else if(!description.value){
+    } else if (!description.value) {
         alert("Adicione a Descrição Da Receita")
         return
-    }else if (!name.value) {
+    } else if (!name.value) {
         alert("Adicione o Nome Da Receita")
         return
     } else if (!img.value) {
@@ -48,8 +48,10 @@ export async function saveData() {
         const data = await response.json()
         const imageUrl = data.data.url
 
-        const ref = await addDoc(collection(db, "receitas"), {
-            id:id,
+        const ref = doc(collection(db, "receitas"))
+
+        await setDoc(ref, {
+            id: ref.id,
             name: name.value.toLowerCase(),
             link: link.value,
             description: description.value,
@@ -63,6 +65,7 @@ export async function saveData() {
         name.value = ""
         link.value = ""
         img.value = ""
+        description = ""
         select.value === "Categoria"
         dataIngredientes.length = 0
         dataPass.length = 0

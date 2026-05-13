@@ -15,7 +15,21 @@ export async function getData(id) {
         ...item.data()
     }))
 
+    if (receitas.length === 0) {
+        const divMae = document.createElement("div")
+        const h1Name = document.createElement("h1")
+        divMae.classList.add("flex", 'flex-col', 'gap-2', 'justify-center', 'items-center')
+        h1Name.classList.add('text-[#b15d3b]', 'font-bold','text-xl')
+        show.innerHTML = ""
+        h1Name.textContent = "Sem Receitas"
+        divMae.appendChild(h1Name)
+
+        show.appendChild(divMae)
+      
+    }
+
     for (let i in receitas) {
+
         const divMae = document.createElement("div")
         const divSon = document.createElement('div')
         const divTitle = document.createElement("div")
@@ -28,27 +42,34 @@ export async function getData(id) {
         const h1Btn = document.createElement("h1")
 
         //classes 
-        divMae.classList.add("flex", 'flex-col', 'gap-3',)
-        divSon.classList.add("flex", 'flex-col', 'gap-3', 'bg-[#f7f3ee]', 'rounded-xl', )
+        divMae.classList.add("flex", 'flex-col', 'gap-2',)
+        divSon.classList.add("flex", 'flex-col', 'justify-between', 'bg-[#f7f3ee]', 'rounded-xl', 'h-90')
         divTitle.classList.add("flex", 'items-center', 'justify-between', 'gap-3', 'p-2')
         divComida.classList.add('w-full', 'h-50')
         imgComida.classList.add('rounded-tr-xl', 'rounded-tl-xl', 'w-full', 'h-full', 'object-cover', 'object-center')
         h1Description.classList.add('p-2', 'text-[#b15d3b]', 'font-bold')
         h1Name.classList.add('text-[#b15d3b]', 'font-bold')
         divImgTitle.classList.add('favorite', 'cursor-pointer')
-        divBtn.classList.add('group',"flex", 'items-center', 'justify-center', 'm-2','p-2','bg-[#b15d3b]', 'rounded','hover:bg-[#de764c]', 'cursor-pointer','showModalReceitas')
+        divBtn.classList.add('group', "flex", 'items-center', 'justify-center', 'm-2', 'p-2', 'bg-[#b15d3b]', 'rounded', 'hover:bg-[#de764c]', 'cursor-pointer', 'showModalReceitas')
         h1Btn.classList.add('text-white', 'font-bold',)
+
+
 
         divBtn.setAttribute('ids', receitas[i].id)
         divImgTitle.setAttribute('id', receitas[i].id)
 
+
         //dados
         h1Btn.textContent = "Ver Receita"
-       
+
         imgComida.src = receitas[i].imgs
         h1Name.textContent = receitas[i].name
         h1Description.textContent = receitas[i].description
-
+        if (id === true) {
+            divImgTitle.classList.add('hidden')
+        } else {
+            divImgTitle.classList.remove('hidden')
+        }
         if (receitas[i].favorito == true) {
             divImgTitle.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 stroke-red-500 text-red-500">
@@ -79,17 +100,18 @@ export async function getData(id) {
             item.addEventListener('click', () => {
                 let ids = item.getAttribute('id')
                 favorites(ids)
-                
+
             })
         })
-       
+
         divSon.querySelectorAll('.showModalReceitas').forEach(item => {
             item.addEventListener('click', () => {
                 let id = item.getAttribute('ids')
                 showModalReceita(id)
-               
+
             })
         })
+
 
         show.appendChild(divMae)
 

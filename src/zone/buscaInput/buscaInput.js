@@ -1,27 +1,28 @@
 import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js"
 import { db } from "../../utils/config/firebase.js"
-import { showNavigate } from "../../utils/navigate/navigate.js"
+import { showMassas } from "../../utils/navigate/navigate.js"
+import { showModalReceita } from "../showReceitas/showModalReceitas.js"
 
 
 export async function searchs(id) {
     let show = document.querySelector("#show")
     show.innerHTML = ""
 
-     const q = query(
+    const q = query(
         collection(db, "receitas"),
         where("name", ">=", id),
         where("name", "<=", id + "\uf8ff")
     )
-        
+
     const data = await getDocs(q)
     const receitas = await data.docs.map(item => ({
         id: item.id,
         ...item.data()
     }))
-    console.log(receitas)
 
-    if(id == ""){
-        showNavigate()
+
+    if (id == "") {
+        showMassas()
         return
     }
 
@@ -34,7 +35,8 @@ export async function searchs(id) {
         const imgComida = document.createElement("img")
         const h1Name = document.createElement("h1")
         const divComida = document.createElement("div")
-
+        const divBtn = document.createElement("div")
+        const h1Btn = document.createElement("h1")
         //classes 
         divMae.classList.add("flex", 'flex-col', 'gap-3',)
         divSon.classList.add("flex", 'flex-col', 'gap-3', 'bg-[#f7f3ee]', 'rounded-xl',)
@@ -44,11 +46,15 @@ export async function searchs(id) {
         h1Description.classList.add('p-2', 'text-[#b15d3b]', 'font-bold')
         h1Name.classList.add('text-[#b15d3b]', 'font-bold')
         divImgTitle.classList.add('cursor-pointer')
+        divBtn.classList.add('group', "flex", 'items-center', 'justify-center', 'm-2', 'p-2', 'bg-[#b15d3b]', 'rounded', 'hover:bg-[#de764c]', 'cursor-pointer', 'showModalReceitas')
+        h1Btn.classList.add('text-white', 'font-bold',)
+
+        divBtn.setAttribute('ids', receitas[i].id)
         //dados
         imgComida.src = receitas[i].imgs
         h1Name.textContent = receitas[i].name
         h1Description.textContent = receitas[i].description
-
+        h1Btn.textContent = "Ver Receita"
         if (receitas[i].favorito == true) {
             divImgTitle.innerHTML = `
                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 stroke-red-500 text-red-500">
@@ -68,11 +74,20 @@ export async function searchs(id) {
         divTitle.appendChild(h1Name)
         divTitle.appendChild(divImgTitle)
         divComida.appendChild(imgComida)
+        divBtn.appendChild(h1Btn)
         divSon.appendChild(divComida)
         divSon.appendChild(divTitle)
         divSon.appendChild(h1Description)
+        divSon.appendChild(divBtn)
         divMae.appendChild(divSon)
 
+        divSon.querySelectorAll('.showModalReceitas').forEach(item => {
+            item.addEventListener('click', () => {
+                let id = item.getAttribute('ids')
+                showModalReceita(id)
+
+            })
+        })
         show.appendChild(divMae)
     }
 }

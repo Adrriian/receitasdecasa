@@ -69,8 +69,8 @@ export async function showModalReceita(id) {
         } else if (link.includes("instagram.com")) {
            
             divVideo.innerHTML = `
-                <img src="../../../public/img/img/insta.png" class="rounded-xl max-w-xs"/>
-                <div class="flex items-center justify-center bg-[#b15d3b]  text-white p-2 rounded max-w-xs">
+                <img src="../../../public/img/img/insta.png" class="rounded-xl  h-80 bg-gray-700 object-cover"/>
+                <div class="flex items-center  justify-center bg-[#b15d3b]  text-white p-2 rounded ">
                     <a 
                     href="${link}" 
                     target="_blank">
@@ -82,8 +82,8 @@ export async function showModalReceita(id) {
         } else {
           
             divVideo.innerHTML = `
-                <img src="../../../public/img/img/block.png" class="rounded-xl max-w-xs"/>
-                <div  class="flex items-center justify-center bg-[#b15d3b]  text-white p-2 rounded  max-w-xs">
+                <img src="../../../public/img/img/block.png" class="rounded-xl  h-80 bg-gray-700 object-cover"/>
+                <div  class="flex items-center justify-center bg-[#b15d3b]  text-white p-2 rounded  ">
                     <h1>
                         Sem Video
                     </h1>
@@ -107,7 +107,7 @@ export async function showModalReceita(id) {
             const passh1 = document.createElement("h1")
             const description = document.createElement("h1")
 
-            divData.classList.add('flex', 'flex-col', 'gap-2')
+            divData.classList.add('flex', 'flex-col', 'gap-1','bg-[#f7f3ee]','p-2','rounded-xl')
             passh1.classList.add('text-[#b15d3b]', 'font-bold', 'text-md')
             description.classList.add('text-[#b15d3b]', 'font-bold', 'text-md')
 
