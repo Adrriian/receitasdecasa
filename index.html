@@ -87,8 +87,9 @@
 
                     </div>
                     <h1 class="font-bold text-xl text-[#b15d3b]">Receitas</h1>
-                    <div id="show" class="bg-white rounded-2xl p-2 h-90 overflow-y-scroll flex flex-col gap-3 sm:grid sm:grid-cols-3">
-                        
+                    <div id="show"
+                        class="bg-white rounded-2xl p-2 h-90 overflow-y-scroll flex flex-col gap-3 sm:grid sm:grid-cols-3">
+
                     </div>
                     <div id="addReceitas"
                         class="p-2 bg-cyan-600 shadow-md/20 rounded-xl flex items-center justify-center cursor-pointer hover:bg-cyan-500 w-40 transition-all ease-linear duration-150">
@@ -130,11 +131,11 @@
                     <div class="flex flex-col gap-2 ">
                         <h1 class="text-[#b15d3b] font-bold">Escolha a Imagem da Receita</h1>
 
-                        <input  id="img" type="file"
+                        <input id="img" type="file"
                             class="placeholder:text-body p-2 text-[#b15d3b] bg-white outline-0 rounded-md shadow-md/20 hover:bg-gray-500/20" />
                     </div>
-                    <div class="flex flex-col gap-2">
-                        <h1 class="text-[#b15d3b] font-bold">Nome da Receita</h1>
+                    <div class="flex flex-col gap-2 sm:col-start-1 sm:col-end-3">
+                        <h1 class="text-[#b15d3b] font-bold">Escolha A Categoria</h1>
                         <select id="select"
                             class=" p-2 rounded-md text-[#b15b3d] outline-0 shadow-md/20 hover:bg-gray-500/20 bg-white">
                             <option>Categoria</option>
@@ -202,9 +203,10 @@
             </div>
 
         </dialog>
-        <dialog id="dialogReceita" class="bg-black/70 z-999 fixed w-full h-full inset-0 hidden items-center justify-center ">
+        <dialog id="dialogReceita"
+            class="bg-black/70 z-999 fixed w-full h-full inset-0 hidden items-center justify-center ">
             <div class="w-4/5 h-4/5 rounded-xl bg-[#f7f3ee] overflow-y-scroll">
-                
+
             </div>
         </dialog>
     </main>

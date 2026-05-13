@@ -1,4 +1,5 @@
- import { closeDialogs, showDialogs } from "../utils/dialog/dialog.js";
+import { closeDialogs, showDialogs } from "../utils/dialog/dialog.js";
+import { favorites } from "../utils/favorite/favorite.js";
 import { showCafe, showFavoritos, showFitness, showLanches, showMassas, showNavigate, showSobremessas } from "../utils/navigate/navigate.js";
 import { searchs } from "../zone/buscaInput/buscaInput.js";
 import { plussStufs, plussStufsArray } from "../zone/ingredientes/plusIngredientes.js";
@@ -18,7 +19,7 @@ let plusPass = document.querySelector("#plusPass")
 plusPass.addEventListener('click', plussPass)
 
 let saveReceitas = document.querySelector("#saveReceitas")
-saveReceitas.addEventListener('click',saveData)
+saveReceitas.addEventListener('click', saveData)
 
 let sobremessas = document.querySelector("#sobremessas")
 let massas = document.querySelector("#massas")
@@ -34,14 +35,17 @@ lanches.addEventListener('click', showLanches)
 fitness.addEventListener('click', showFitness)
 favorito.addEventListener('click', showFavoritos)
 
+
+
 let search = document.querySelector("#search")
-search.addEventListener('input', ()=>{
-    
+search.addEventListener('input', () => {
+
     const data = search.value.toLowerCase()
-search.value = data
+    search.value = data
     searchs(data)
-   
+
 })
 
 showNavigate()
 showPass()
+

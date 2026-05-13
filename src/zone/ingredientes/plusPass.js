@@ -82,7 +82,7 @@ export async function showData() {
             })
         })
         showPass.appendChild(divMae)
-       
+
 
     }
 
@@ -98,12 +98,12 @@ function deletePass(id) {
             numberPass: index + 1
         }));
 
-    if(dataPass.length <= 0){
+    if (dataPass.length <= 0) {
         numberPassText.textContent = "1";
-    }else{
+    } else {
         numberPassText.textContent = Number(dataPass[dataPass.length - 1].numberPass) + 1;
     }
-    
+
     showPass.innerHTML = ""
     showData()
 }
