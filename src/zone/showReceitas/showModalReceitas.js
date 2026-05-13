@@ -15,13 +15,13 @@ export async function showModalReceita(id) {
         id: item.id,
         ...item.data()
     }))
-    console.log(dados)
+
 
     for (let i in dados) {
         const link = dados[i].link
         let pass = dados[i].pass
         let ingredientes = dados[i].ingredientes
-
+        
         const divMae = document.createElement("div")
         const divTitle = document.createElement("div")
         const h1Title = document.createElement("h1")
@@ -33,16 +33,21 @@ export async function showModalReceita(id) {
         const ingredientesTitle = document.createElement("h1")
         const divShowIngredientes = document.createElement("div")
         const divPassos = document.createElement("div")
-          const passosTitle = document.createElement("h1")
-          const divShowPassos = document.createElement("div")
+        const passosTitle = document.createElement("h1")
+        const divShowPassos = document.createElement("div")
 
-
+        divMae.classList.add('flex', 'flex-col', 'overflow-y-scroll')
         divTitle.classList.add('flex', 'items-center', 'justify-between', 'gap-3', 'p-3')
         h1Title.classList.add('text-[#b15d3b]', 'font-bold', 'text-xl')
         closeTitle.classList.add('group', 'cursor-pointer', 'hover:bg-[#b15d3b]', 'p-2', 'rounded-full', 'transition-all', 'ease-linear', 'duration-150')
         divHr.classList.add('border-3', 'border-[#b15d3b]', 'w-full')
-        divVideo.classList.add('w-full', 'h-90','p-2','flex','flex-col','gap-2','bg-white', )
-        
+        divVideo.classList.add(  'p-2', 'flex', 'flex-col', 'gap-2', 'bg-white', )
+        divIngredientes.classList.add('w-full', 'h-full', 'p-2', 'flex', 'flex-col', 'gap-2',)
+        ingredientesTitle.classList.add('text-[#b15d3b]', 'font-bold', 'text-md')
+        divShowIngredientes.classList.add('w-full', 'h-full', 'p-2', 'flex', 'flex-col', 'gap-2','bg-white', 'rounded-xl')
+        divPassos.classList.add('w-full', 'h-full', 'p-2', 'flex', 'flex-col', 'gap-2',)
+        passosTitle.classList.add('text-[#b15d3b]', 'font-bold', 'text-md')
+        divShowPassos.classList.add('w-full', 'h-full', 'p-2', 'flex', 'flex-col', 'gap-2','bg-white', 'rounded-xl')
 
         h1Title.textContent = dados[i].name
         closeTitle.innerHTML = `
@@ -62,29 +67,59 @@ export async function showModalReceita(id) {
                 `
 
         } else if (link.includes("instagram.com")) {
-            divVideo.classList.remove('h-90')
-            divVideo.classList.add('h-76')
-             divVideo.innerHTML = `
-                <img src="../../../public/img/img/insta.png" class="rounded-xl"/>
-                <a 
+           
+            divVideo.innerHTML = `
+                <img src="../../../public/img/img/insta.png" class="rounded-xl max-w-xs"/>
+                <div class="flex items-center justify-center bg-[#b15d3b]  text-white p-2 rounded max-w-xs">
+                    <a 
                     href="${link}" 
-                    target="_blank"
-                    class="bg-[#b15d3b] text-center text-white px-4 py-2 rounded-xl inline-block">
+                    target="_blank">
                     Ver vídeo no Instagram
                 </a>
-                `   
-        }else{
-            divVideo.classList.remove('h-90')
-            divVideo.classList.add('h-76')
-             divVideo.innerHTML = `
-                <img src="../../../public/img/img/block.png" class="rounded-xl"/>
-                <h1
-                    class="bg-[#b15d3b] text-center text-white px-4 py-2 rounded-xl inline-block">
-                    Sem Video
-                </h1>
-                `   
+                </div>
+                
+                `
+        } else {
+          
+            divVideo.innerHTML = `
+                <img src="../../../public/img/img/block.png" class="rounded-xl max-w-xs"/>
+                <div  class="flex items-center justify-center bg-[#b15d3b]  text-white p-2 rounded  max-w-xs">
+                    <h1>
+                        Sem Video
+                    </h1>
+                </div>
+
+                `
         }
 
+        for (let e in ingredientes) {
+          
+            const h1 = document.createElement("h1")
+            h1.classList.add('text-[#b15d3b]', 'font-bold', 'text-md')
+
+            h1.textContent = ingredientes[e].description
+            divShowIngredientes.appendChild(h1)
+            
+        }
+         for (let e in pass) {
+            
+            const divData = document.createElement("div")
+            const passh1 = document.createElement("h1")
+            const description = document.createElement("h1")
+
+            divData.classList.add('flex', 'flex-col', 'gap-2')
+            passh1.classList.add('text-[#b15d3b]', 'font-bold', 'text-md')
+            description.classList.add('text-[#b15d3b]', 'font-bold', 'text-md')
+
+            passh1.textContent = pass[e].pass + pass[e].numberPass
+            description.textContent = pass[e].description
+
+            divData.appendChild(passh1)
+            divData.appendChild(description)
+            divShowPassos.appendChild(divData)
+        }
+
+        
         ingredientesTitle.textContent = "Ingredientes"
         passosTitle.textContent = 'Passos'
 

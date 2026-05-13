@@ -11,16 +11,13 @@ export async function saveData() {
      let description = document.querySelector('#description')
     const API_KEY = "2cc9bc81af8967580d318d107a44ad97"
 
-    if (!name.value || !link.value ||!description.value || !img.value || select.value === "Categoria" || dataIngredientes.length <= 0 || dataPass.length <= 0) {
+    if (!name.value || !description.value || !img.value || select.value === "Categoria" || dataIngredientes.length <= 0 || dataPass.length <= 0) {
         alert('adicione os dados')
     }else if(!description.value){
         alert("Adicione a Descrição Da Receita")
         return
     }else if (!name.value) {
         alert("Adicione o Nome Da Receita")
-        return
-    } else if (!link.value) {
-        alert("Adicione o Link Da Receita")
         return
     } else if (!img.value) {
         alert("Adicione a Imagem Da Receita")
